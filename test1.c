@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include<SDL_phelma.h>
+#include <SDL_phelma.h>
 
 
 unsigned char ** alloue_image_char(int nl, int nc) 
@@ -165,18 +165,17 @@ unsigned char ** zoomx_image(unsigned char **ims, unsigned char **im, int nbcol,
 void seam_carving(unsigned char** im, int nbcol, int nl,int nc) 
 {
 	unsigned char**energie=NULL,**energ=NULL;
-	unsigned int*coutfinal,* chemin; unsigned int**pere;unsigned int**cop;
+	unsigned int*coutfinal,* chemin; unsigned int**pere;
 	int i,j;
 	for(i=0;i<nbcol;i++){
 		coutfinal=calloc(nl,sizeof(*coutfinal));
-		cop=alloue_image_int(nl,nc-i);
 		chemin=calloc(nl,sizeof(*chemin));
 		pere=alloue_image_int(nl,nc-i);
 		energ=alloue_image_char(nl,nc-i);
 
 		energie=gradienty(energ,im,nl,nc-i);	
 //fonctionne jusqu'ici
-		calcul_cout(coutfinal,energie,pere,cop,nl,nc-i);
+		calcul_cout(coutfinal,energie,pere,nl,nc-i);
 //calcule bien coutfinal avec energie et pere mais pere se volatilise ??? (plus aucune trace du tableau pere...)
 printf("energie\n");
 printf("%d\t",energie[0][0]);
