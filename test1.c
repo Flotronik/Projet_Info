@@ -178,11 +178,11 @@ void seam_carving(unsigned char** im, int nbcol, int nl,int nc)
 //fonctionne jusqu'ici
 		calcul_cout(coutfinal,energie,pere,cop,nl,nc-i);
 //calcule bien coutfinal avec energie et pere mais pere se volatilise ??? (plus aucune trace du tableau pere...)
-printf("energ\n");
-printf("%d\t",energ[0][0]);
+printf("energie\n");
+printf("%d\t",energie[0][0]);
 	for(i=0;i<nl;i++){
 		for(j=0;j<nc;j++){
-			printf("%d\t",energ[i][j]);}
+			printf("%d\t",energie[i][j]);}
 		printf("\n");}
 	printf("\n");
 	printf("\n");
